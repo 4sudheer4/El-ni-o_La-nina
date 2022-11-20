@@ -1,0 +1,187 @@
+Research Paper: El Niño-Southern Oscillation forecasting using complex networks analysis of LSTM neural networks
+
+Introduction:
+Warmer or colder than average ocean temperatures in one part of the world can influence weather around the globe which is one of the most inﬂuential climatological phenomenon
+
+ENSO is characterized through Southern Oscillation Index (SOI), a standardized index based on the observed sea level pressure differences between Tahiti and Darwin, Australia.
+
+The negative phase of the SOI represents below-normal air pressure at Tahiti and above-normal air pressure at Darwin. Prolonged periods of negative (positive) SOI values coincide with abnormally warm (cold) ocean waters across the eastern tropical Pacific typical of El Niño (La Niña) episodes. 
+
+ 
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+Enso’s predictability for longer horizons is still a challenge in the scientific community.
+gbhjkbkjhshow an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+the author talks about how an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon. 
+
+despite great eﬀort 
+and signiﬁcant progress, forecasts, skillfully performed can 
+only provide up to 6-month forecast horizon. Thus far, for 
+longer multiple steps ahead forecasting, the performance 
+achieved is low and unreliable [2, 3]. And this is because 
+time series forecasting over a long multiple steps ahead is 
+still an open challenge [4].
+Despite great eﬀort and signiﬁcant progress, forecasts, skillfully performed can only provide up to 6-month forecast horizon. Thus far, for longer multiple steps ahead forecasting, the performance achieved is low and unreliable. And this is because time series forecasting over a long multiple steps ahead is still an open challenge.
+
+While, the statistical models 
+use mathematical formulations to learn from observed data 
+to forecast ENSO event. And it has been indicated that, the 
+average performance of dynamical models slightly exceeds 
+that of statistical models [2]. One reason posited in literature 
+as the factor limiting ENSO predictability is its nonlinear
+While, the statistical models use mathematical formulations to learn from observed data to forecast ENSO event. And it has been indicated that, the average performance of dynamical models slightly exceeds that of statistical models. One reason posited in literature as the factor limiting ENSO predictability is its nonlinear characteristics.
+we argue that, LSTM models have 
+strong capability for capturing long-term temporal depend-
+encies of ENSO, and model its nonlinear characteristic.
+we argue that, LSTM models have 
+strong capability for capturing long-term temporal depend-
+encies of ENSO, and model its nonlinear characteristic.
+
+The author argues that, LSTM models have strong capability for capturing long-term temporal dependencies of ENSO and model its nonlinear characteristic.
+
+ENSO Phenomenon:
+In the Pacific Ocean, which stretches from the coasts of Peru and Ecuador to the center, close to the International Date Line, the phenomena alternates between El Nio and La Nia events. It is defined as a five consecutive three-month running mean of SST anomalies in the Nio3.4 region, 5°S-5°N and 170°W-120°W, as illustrated in following figure, that are above or below the +0.5°C or 0.5°C thresholds, respectively. Another standardized indexes for tracking ENSO are the Oceanic Nio Index (ONI), SOI, Precipitation, Pacific North-America pattern (PNA).
+
+
+Overview of proposed Network:
+The proposed approach has two phases (Fig.2). The ﬁrst 
+phase basically delivers networks metrics as feature set 
+to the second phase. The phase one involves constructing 
+3-month evolving climate networks (evolving-CNs)
+The proposed approach has two phases:
+
+The ﬁrst phase basically delivers networks metrics as feature set to the second phase. The phase one involves constructing 3-month evolving climate networks (evolving-CNs) from the collected SAT timeseries dataset.
+
+The multiscale network metrics are mapped to a multivariate time series as feature matrix that are used as input variables (predictors).
+
+In the second phase, LSTM neural network models are built and several experiments are run to determine which of the feature subset of the multiscale complex network metrics that best generalize and forecast ENSO events for 6-, 9-, and 12-month multiple steps ahead.
+
+MIMO:
+Multiple steps time series forecasting involves making predictions that are two or more steps ahead utilizing a single-output or multiple-output technique [4].The multiple-output strategy is known as multiple-input multiple-output (MIMO) time series forecasting, as it models time series data as a multiple-input multiple-output function.
+
+LSTM Neural Network:
+LSTM is a novel recurrent neural network that is capable of capturing long-term temporal dependencies. It is also superior to feed-forward neural networks in solving time series tasks
+
+With (x1,x2,...,xT) serving as the input sequence of predictors and (y1,y2,...,yT1) serving as its target output sequence (whose length T1 may vary from T), the LSTM seeks to estimate the conditional probability. The LSTM calculates this conditional probability by first obtaining the fixed-dimensional representation l of the input sequence (x1,x2,...,xT) provided by the LSTM's last hidden state. The probability of (y1,y2,...,yT1) is then calculated using a standard LSTM-LM formulation, where the initial hidden state is set to the representation l of (x1,x2,...,xT).
+
+Climate Network construction:
+
+This is nothing but a network with nodes and vertices joining them, where the nodes are spatial locations that climatological time series data are observed, and if there is a statistical similarity between two time series observed at diﬀerent spatial locations, then a link exist between the nodes. In this study each evolving-CN consists of 10,512 nodes of 3-month daily SATs time series data. The linkages between the nodes were found using Pearson correlation to save on computing costs. Then, from January 1950 to February 2017 SATs time series, a total of 804 similarity matrices were created using 3-month window sliding (to align with 3-month running average of the target data, Nio3.4 index) to reflect evolving phenomena state within many consecutive windows in time.
+
+Out of 95 features there were only 12 multiscale features selected making the feature matrix 804x12
+
+Given that the performance differences between the 6-, 9-, and 12-month periods are not statistically significant, the results suggest that the LSTM neural networks may have the ability to learn the long-term temporal dependencies of the ENSO phenomena and mimic its nonlinear properties. This means that at longer multiple steps ahead, LSTM with network metrics has the potential to forecast ENSO phenomenon just as the short multiple steps ahead.
+
+Model is built to forecast ENSO in a longer multiple steps ahead, with 2 layers of LSTM with 50 units per layer was trained at 200 epoch using SGD at a learning rate of 0.0005 and momentum 0.0 with no trained hyperparameters. The forecast of ENSO was evaluated using RMSE. 
+
+As the proposed method LSTM model outperforms four models (ESSIC ICM, CDC LIM, UNB/CWC, UCLA-TCD) of the 20 benchmark ENSO prediction models, the results imply that network metrics have predictive ability and the capacity to foresee ENSO phenomena in longer multiple steps ahead.
+Conclusion:
+The author proposed a new approach for forecasting ENSO phenomenon in longer multiple steps ahead by integrating climate (complex) network analysis into neural network regression task. 
+
+The author specifically built 804 developing climate networks, extracted 12 multiple scale network measures from each one, and then methodically mapped the network metrics into a multivariate time series to create a feature matrix.
+
+This strategy has excellent potential to improve the ability of climate scientists and meteorologists to forecast ENSO. Future research may use more data, a deep LSTM architecture with an attention mechanism, and the tuning of a number of hyperparameters to enhance performance.
+
+ My Model:
+
+Based on the above proposed model in a research I have tried to build a model collecting the data from multiple resources and selected ONI, nino3.4, Precipitation, PNA and SOI as my features which are principal metrics to measure El niño and La nina along with the type of Enso_type we have each year.
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+show an approach based on using various complex networks 
+metrics extracted from climate networks with long short-term memory neural network to forecast ENSO phenomenon
+Resources: https://www.ncei.noaa.gov/access/monitoring/enso/soi
+       https://climateknowledgeportal.worldbank.org/download-data 
+                    https://www.transparency.org/en/news/how-cpi-scores-are-calculated
+
+I have organized all of the metric data into a single dataframe in their respective year, month for a better visualization. Following is an illustration.
+
+
+
+
+
+
+
+Following Graph to demonstrate the trends of all the SST indexes over the past 72 years:
+ 
+
+The periods of below and above normal SSTs Greater than or less than 0.5 and when the threshold is met for a minimum of 5 consecutive overlapping seasons then it can be treated as El Nino or La nina. The ONI is one measure of the El Niño-Southern Oscillation, and other indices can confirm whether features consistent with a coupled ocean-atmosphere phenomenon accompanied these periods, which can be seen in the above graphs.
+
+
+
+
+
+
+Graph to demonstrate the trends of all the SST indices and the corresponding ENSO_Type:
+
+ 
+As discussed earlier to convert Panda time series into a format that supervised learning algorithms can use.
+
+Reference: https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/
+
+Here is how the extended dataframe looks like the following with 3 month lead: 
+
+
+I have built a basic architecture pipeline to train the data and have examined a loss of 0.04 as explained in the paper.
+
+ 
+
+Model looks like:  
+
+Calculated RMSE and the following are the numbers:
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here, the red line represents the outcome of the predictions, and the blue line represents the original time series. As we can see, it is functioning reasonably:
+
+ 
+
+
+
+	Although ENSO prediction is regarded as one of the most challenging tasks in climate research, we think improved outcomes could be obtained with more sophisticated model tuning and architecture design.
